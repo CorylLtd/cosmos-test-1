@@ -2,21 +2,19 @@
 
 import { Family } from '@/types/family';
 import { CosmosClient } from '@azure/cosmos';
+import { userAgent } from 'next/server';
 
 const endpoint = 'https://corylcosmostest.documents.azure.com:443/';
-const d =
-  'SNQA3pj1b3FC' +
-  'cPXCyO846gKh6QDQ' +
-  'p1Hkbi28XE5EivdyFJSB' +
-  '4lcHh3VpZJYD4f9DIS73' +
-  'N0k76CvtACDbAMOqIg==';
+const key =
+  'SNQA3pj1b3FCcPXCyO846gKh6QDQp1Hkbi28XE5EivdyFJSB4lcHh3VpZJYD4f9DIS73N0k76CvtACDbAMOqIg==';
+
 const databaseId = 'ToDoList';
 const containerId = 'Items';
 const partitionKey = { kind: 'Hash', paths: ['/partitionKey'] };
 
 const options = {
   endpoint,
-  d,
+  key,
   userAgentSuffix: 'CosmosDBJavascriptQuickstart',
 };
 
