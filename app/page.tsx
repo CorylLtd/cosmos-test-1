@@ -1,18 +1,11 @@
-'use client';
-
 import { getFamily } from '@/actions/db';
-import { Family } from '@/types/family';
-import { useState } from 'react';
 
 export default async function Home() {
-  const [family, setFamily] = useState<Family | null>(null);
+  const family = await getFamily('Randall');
 
   return (
     <main className="p-4">
       <h1 className="text-3xl font-bold mb-4">Home</h1>
-      <button onClick={async () => setFamily(await getFamily('Randall'))}>
-        Get Family
-      </button>
       {family && (
         <>
           <p className="mb-3">

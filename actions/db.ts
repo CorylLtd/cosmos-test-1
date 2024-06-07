@@ -2,7 +2,6 @@
 
 import { Family } from '@/types/family';
 import { CosmosClient } from '@azure/cosmos';
-import { userAgent } from 'next/server';
 
 const endpoint = 'https://corylcosmostest.documents.azure.com:443/';
 const key =
