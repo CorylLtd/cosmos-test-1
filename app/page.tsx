@@ -1,3 +1,5 @@
+'use client';
+
 import { getFamily } from '@/actions/db';
 
 export default async function Home() {
