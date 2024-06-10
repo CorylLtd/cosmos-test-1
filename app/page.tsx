@@ -1,5 +1,7 @@
 import { getFamily } from '@/actions/db';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const family = await getFamily('Randall');
 
