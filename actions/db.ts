@@ -3,9 +3,8 @@
 import { Family } from '@/types/family';
 import { CosmosClient } from '@azure/cosmos';
 
-const endpoint = 'https://corylcosmostest.documents.azure.com:443/';
-const key =
-  'SNQA3pj1b3FCcPXCyO846gKh6QDQp1Hkbi28XE5EivdyFJSB4lcHh3VpZJYD4f9DIS73N0k76CvtACDbAMOqIg==';
+const endpoint = process.env.DB_URL as string;
+const key = process.env.DB_KEY as string;
 
 const databaseId = 'ToDoList';
 const containerId = 'Items';
