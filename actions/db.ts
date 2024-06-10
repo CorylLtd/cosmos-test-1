@@ -6,14 +6,13 @@ import { CosmosClient } from '@azure/cosmos';
 const endpoint = process.env.DB_URL as string;
 const key = process.env.DB_KEY as string;
 
-const databaseId = 'ToDoList';
-const containerId = 'Items';
-const partitionKey = { kind: 'Hash', paths: ['/partitionKey'] };
+const databaseId = process.env.DB_NAME as string;
+const containerId = process.env.DB_CONTAINER as string;
 
 const options = {
   endpoint,
   key,
-  userAgentSuffix: 'CosmosDBJavascriptQuickstart',
+  userAgentSuffix: 'cosmosdb-quickstart-v3',
 };
 
 export async function getFamily(name: string): Promise<Family> {
